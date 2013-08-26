@@ -68,7 +68,7 @@
 
 
 ;;; cedet
-;; 
+;;
 
 
 ;;; ecb : the package ecb-2.40 from offical (http://ecb.sourceforge.net/) or elpa system is not ok
@@ -79,8 +79,11 @@
 ;; http://stackoverflow.com/questions/8833235/install-ecb-with-emacs-starter-kit-in-emacs-24
 ;; modified two files : ecb.el , ecb-upgrade.el
 
+;;comment ecb
+(if nil (progn
+
 ;; prevent error
-(setq stack-trace-on-error t) 
+(setq stack-trace-on-error t)
 
 ;; (require 'cedet)
 (add-to-list 'load-path "~/z.emacs.d/pkgs/ecb-2.40")
@@ -105,6 +108,10 @@
 ;; 恢复原始窗口布局
 (define-key global-map "\C-c`" 'ecb-restore-default-window-sizes)
 
+;;end of comment
+))
+
+
 ;;; cscope
 ;; usage: http://cscope.sourceforge.net/large_projects.html
 ;;1. use find　to collect files to cscope.files
@@ -112,9 +119,9 @@
 ;; -b just build(not load GUI) -q(create inverted index) -k(don't
 ;; include /usr/include for header files
 
-(add-to-list 'load-path "~/z.emacs.d/pkgs/cscope-15.8/contrib/xcscope")
+(add-to-list 'load-path "~/z.emacs.d/pkgs/cscope-15.8a/contrib/xcscope")
 (require 'xcscope) ;;加载xcscope
-;;c模式下加载xcscope 
+;;c模式下加载xcscope
 (add-hook 'c-mode-common-hook '(lambda() (require 'xcscope)))
 ;;绑定按键
 (define-key global-map [(control f3)]  'cscope-set-initial-directory)
@@ -131,4 +138,3 @@
 (define-key global-map [(meta f10)]    'cscope-display-buffer-toggle)
 ;;关闭每次查找时自动更新cscope.out
 (setq cscope-do-not-update-database t)
-
