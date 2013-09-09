@@ -14,9 +14,9 @@
 (load "~/.emacs.d/init.el")
 
 ;;;spell check zh_CN error
-;; use apsell as ispell backend 
+;; use apsell as ispell backend
 (setq-default ispell-program-name "aspell")
-;; use American English as ispell default dictionary 
+;; use American English as ispell default dictionary
 (ispell-change-dictionary "american" t)
 
 ;; load my packages
@@ -34,7 +34,6 @@
 ;; spell check
 (setq-default flyspell-mode t)
 
-
 ;;; sbcl & slime
 ;; ref http://blog.csdn.net/yang_7_46/article/details/8039656
 ;;sudo apt-get install emacs
@@ -48,6 +47,14 @@
 (setq inferior-lisp-program "sbcl")
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 
+;;;googl-translate
+(require 'google-translate)
+(global-set-key "\C-xt" 'google-translate-at-point)
+(global-set-key "\C-xT" 'google-translate-query-translate)
+(set-face-attribute 'google-translate-translation-face nil :height 1.4)
+(set 'google-translate-enable-ido-completion t)
+(set 'google-translate-default-source-language "auto")
+(set 'google-translate-default-target-language "zh-CN")
 
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
