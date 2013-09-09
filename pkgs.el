@@ -52,6 +52,7 @@
         tramp
         undo-tree
         volatile-highlights
+        w3m
         whitespace
         windmove
         yasnippet))

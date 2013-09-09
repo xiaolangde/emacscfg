@@ -23,7 +23,6 @@
 (if (file-exists-p "~/z.emacs.d/pkgs.el")
     (load "~/z.emacs.d/pkgs.el"))
 
-
 ;;;display time
 (display-time)
 
@@ -55,6 +54,11 @@
 (set 'google-translate-enable-ido-completion t)
 (set 'google-translate-default-source-language "auto")
 (set 'google-translate-default-target-language "zh-CN")
+
+;;; emacs-w3m: an Emacs interface to the w3m text browser
+;; require :install w3m first
+;(require 'w3m-load) ;加载
+(setq w3m-home-page "https://www.google.com") ;设置主页
 
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
