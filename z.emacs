@@ -58,7 +58,26 @@
 ;;; emacs-w3m: an Emacs interface to the w3m text browser
 ;; require :install w3m first
 ;(require 'w3m-load) ;加载
-(setq w3m-home-page "https://www.google.com") ;设置主页
+;(require 'mime-w3m) ;; todo: fix shift+RET
+(eval-after-load "w3m"
+  '(progn
+     (autoload 'w3m "w3m" "interface for w3m on emacs" t)
+
+     (setq w3m-home-page "https://www.google.com") ;设置主页
+     ;; 使用cookies
+     (setq w3m-use-cookies t)
+     ;; 默认显示图片
+     (setq w3m-default-display-inline-images t)
+     (setq w3m-default-toggle-inline-images t)
+     ;;设定w3m运行的参数，分别为使用cookie和使用框架
+     (setq w3m-command-arguments '("-cookie" "-F"))
+     ;; 使用w3m作为默认浏览器
+     (setq browse-url-browser-function 'w3m-browse-url)
+     (setq w3m-view-this-url-new-session-in-background t)
+     ;;显示图标
+     (setq w3m-show-graphic-icons-in-header-line t)
+     (setq w3m-show-graphic-icons-in-mode-line t)
+     ))
 
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
