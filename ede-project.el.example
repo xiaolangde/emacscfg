@@ -1,0 +1,22 @@
+;;;; ede-project -- maintain some projects (local machine)
+;;file:
+;;file可以为该程根目录下面的任意文件，该文件不用来解析，而只是这个工程的一个标志。
+;;include-path:
+;;该变量是一个相对路径，指出了自定义的include目录。 其中的"/"并不表示系统的根目录，而表示该工程的根目录。
+;;system-include-path:
+;;这是一个绝对路径，该路径指明了系统的Include
+;;The :spp-table parameter allows to specify list of pairs, consisting from symbol's name & value, defined for given symbol. In our example above, we defined two symbols — isUnix and BOOST_TEST_DYN_LINK, that will be passed to preprocessor, and this will allow to perform proper parsing of the code.
+
+(ede-cpp-root-project "Test"
+                      :name "Test Project"
+
+                      :file "~/work/project/CMakeLists.txt"
+                      :include-path '("/"
+                                      "/Common"
+                                      "/Interfaces"
+                                      "/Libs"
+                                      )
+                      :system-include-path '("~/exp/include")
+                      :spp-table '(("isUnix" . "")
+                                   ("BOOST_TEST_DYN_LINK" . "")
+                                   ("DEBUG" . "")))

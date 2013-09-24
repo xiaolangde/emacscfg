@@ -59,6 +59,8 @@
 ;; require :install w3m first
 ;(require 'w3m-load) ;加载
 (setq w3m-home-page "https://www.google.com") ;设置主页
+(setq w3m-default-display-inline-images t) ;默认显示图片
+(set 'w3m-toggle-inline-images-permanently t)
 
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
