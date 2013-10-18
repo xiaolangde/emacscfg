@@ -13,6 +13,8 @@
 ;;; load Prelude
 (load "~/.emacs.d/init.el")
 
+(setq prelude-whitespace nil)
+
 ;;;spell check zh_CN error
 ;; use apsell as ispell backend
 (setq-default ispell-program-name "aspell")
