@@ -82,6 +82,10 @@
      (setq w3m-show-graphic-icons-in-mode-line t)
      ))
 
+;;;org-mode 
+;; turn off the html-validation-link when export html
+(setq org-export-html-validation-link nil)
+
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
 (tool-bar-mode -1)
