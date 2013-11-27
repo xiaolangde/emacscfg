@@ -29,6 +29,7 @@
         flycheck
         framemove
         fuzzy
+        geiser
         gist
         git-blame
         git-commit-mode
@@ -47,10 +48,12 @@
         org
         paredit
         pos-tip
+        quack
         rainbow-delimiters
         smartparens
         smex
         solarized-theme
+        tabbar
         tramp
         undo-tree
         volatile-highlights
@@ -87,7 +90,7 @@
                                      ;;activates CEDET's context menu that is bound to right mouse button;
                                      global-semantic-highlight-func-mode
                                      ;;activates highlighting of first line for current tag (function, class, etc.);
-                                     global-semantic-stickyfunc-mode
+                                     ;global-semantic-stickyfunc-mode
                                      ;;activates mode when name of current tag will be shown in top line of buffer;
                                      global-semantic-decoration-mode
                                      ;;activates use of separate styles for tags decoration (depending on tag's class). These styles are defined in the semantic-decoration-styles list;
@@ -271,3 +274,10 @@
 (define-key global-map [(meta f10)]    'cscope-display-buffer-toggle)
 ;;关闭每次查找时自动更新cscope.out
 (setq cscope-do-not-update-database t)
+
+;;; tabbar
+(tabbar-mode t)
+;;(global-set-key [(control shift tab)] 'tabbar-backward-group)
+(global-set-key [(control tab)] 'tabbar-forward-group)
+(global-set-key (kbd "C-`") 'tabbar-forward-tab)
+(global-set-key (kbd "C-~") 'tabbar-backward-tab)
