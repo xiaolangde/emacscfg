@@ -203,6 +203,9 @@
   ;; Indent or complete
   (local-set-key  [(tab)] 'indent-or-complete)
 
+  ;; visit the include file
+  (local-set-key "\C-cv" 'semantic-decoration-include-visit)
+
   ;; because of both semantic-stickyfunc-mode and tabbar use the first line,
   ;; and semantic-stickyfunc-mode is priority,then bound a key to toggle the semantic-stickyfunc-mode
   (global-set-key (kbd "C-c C-f") 'semantic-stickyfunc-mode)

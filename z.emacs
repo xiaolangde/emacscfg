@@ -85,6 +85,8 @@
 ;;;org-mode 
 ;; turn off the html-validation-link when export html
 (setq org-export-html-validation-link nil)
+;; warp line at window edge
+(setq org-startup-truncated nil)
 
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
