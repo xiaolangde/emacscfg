@@ -51,7 +51,9 @@
 ;;;googl-translate
 (require 'google-translate)
 (global-set-key "\C-xt" 'google-translate-at-point)
-(global-set-key "\C-xT" 'google-translate-query-translate)
+(global-set-key "\C-xT" 'google-translate-at-point-reverse)
+(global-set-key "\C-xy" 'google-translate-query-translate)
+(global-set-key "\C-xY" 'google-translate-query-translate-reverse)
 (set-face-attribute 'google-translate-translation-face nil :height 1.4)
 (set 'google-translate-enable-ido-completion t)
 (set 'google-translate-default-source-language "auto")

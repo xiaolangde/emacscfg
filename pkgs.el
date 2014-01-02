@@ -209,8 +209,8 @@
   ;; because of both semantic-stickyfunc-mode and tabbar use the first line,
   ;; and semantic-stickyfunc-mode is priority,then bound a key to toggle the semantic-stickyfunc-mode
   (global-set-key (kbd "C-c C-f") 'semantic-stickyfunc-mode)
-  (key-chord-define c++-mode-map "ff" 'semantic-stickyfunc-mode)
-  (key-chord-define c-mode-map "ff" 'semantic-stickyfunc-mode)
+  ;;(key-chord-define c++-mode-map "ff" 'semantic-stickyfunc-mode)
+  ;;(key-chord-define c-mode-map "ff" 'semantic-stickyfunc-mode)
   )
 (add-hook 'c-mode-common-hook 'yyc/c-mode-keys)
 
