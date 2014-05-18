@@ -5,7 +5,7 @@
 (global-set-key  (kbd "C-c c") 'set-mark-command)
 
 ;;;modify key
-(global-set-key "\C-x\C-m" 'execute-extended-command)
+;(global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
 (global-set-key "\C-w" 'backward-kill-word)
@@ -27,14 +27,20 @@
   (interactive "P")
   (if arg
       (scroll-up arg)
-    (scroll-up 2)))
+    (scroll-up-line 2))
+  (if arg 
+      (previous-line arg)
+    (previous-line 2)))
 
 (defun window-move-down (&optional arg)
-  "Current window move-down 3 lines."
+  "Current window move-down 2 lines."
   (interactive "P")
   (if arg
       (scroll-down arg)
-    (scroll-down 3)))
+    (scroll-down 2))
+  (if arg 
+      (next-line arg)
+    (next-line 2)))
 
 (defun other-window-move-up (&optional arg)
   "Other window move-up 1 lines."
