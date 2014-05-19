@@ -45,8 +45,9 @@
 ;;(ql:add-to-init-file)
 ;;(ql:quickload "ieee-floats")
 ;;(ql:quickload "quicklisp-slime-helper")
-(setq inferior-lisp-program "sbcl")
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(if (file-exists-p "~/quicklisp/slime-helper.el")
+    (progn (setq inferior-lisp-program "sbcl")
+           (load (expand-file-name "~/quicklisp/slime-helper.el"))))
 
 ;;;googl-translate
 (require 'google-translate)
@@ -89,6 +90,13 @@
 (setq org-export-html-validation-link nil)
 ;; warp line at window edge
 (setq org-startup-truncated nil)
+
+;;; windows full screen
+(if (and (eq window-system 'w32)
+	 (file-exists-p "emacs_fullscreen.exe"))
+    (progn
+      (defun toggle-full-screen () (interactive) (shell-command "emacs_fullscreen.exe"))
+      (global-set-key [f11] 'toggle-full-screen)))
 
 ;;; menu-bar tool-bar scroll-bar ;nil:display <0:hide
 (menu-bar-mode nil)
