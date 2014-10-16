@@ -45,9 +45,10 @@
 ;;(ql:add-to-init-file)
 ;;(ql:quickload "ieee-floats")
 ;;(ql:quickload "quicklisp-slime-helper")
-(if (file-exists-p "~/quicklisp/slime-helper.el")
-    (progn (setq inferior-lisp-program "sbcl")
-           (load (expand-file-name "~/quicklisp/slime-helper.el"))))
+;; (if (file-exists-p "~/quicklisp/slime-helper.el")
+;;     (progn (setq inferior-lisp-program "sbcl")
+;;            (load (expand-file-name "~/quicklisp/slime-helper.el"))))
+(setq inferior-lisp-program "sbcl")
 
 ;;;googl-translate
 (require 'google-translate)

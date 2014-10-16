@@ -17,6 +17,8 @@
         ack-and-a-half
         auto-complete
         auto-complete-clang-async
+        cmake-mode
+        cmake-project
         diminish
         dired+
 ;;        ecb
